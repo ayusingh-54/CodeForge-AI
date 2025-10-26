@@ -1,55 +1,104 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--
+    Frontend: CodeForge AI - Responsive Single-Page Frontend
+
+    Purpose: A small, self-contained frontend that serves as both a
+    documentation landing page and an interactive AI chat demo widget.
+
+    Files:
+        - index.html  : This file (structure + usage notes in comments)
+        - styles.css  : The styling and responsive layout
+        - script.js   : Interactivity, demo AI client, persistence
+
+    Quick notes:
+        - The demo runs entirely in the browser (demo mode) without
+            any API keys. To hook to a real backend, see Frontend/README.md
+            for a minimal fetch example that calls a server endpoint.
+        - This file contains inline documentation in comments. Read the
+            README for step-by-step wiring and deployment tips.
+-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeForge AI - Intelligent Code Assistant</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeForge AI — Interactive Assistant</title>
+    <meta name="description" content="CodeForge AI — interactive frontend demo for an intelligent coding assistant. Includes demo-mode chat, export, and step-by-step docs." />
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>CodeForge AI</h1>
-        <p>Your Intelligent Coding Companion</p>
+    <header class="site-header">
+        <div class="branding">
+            <h1>CodeForge AI</h1>
+            <p class="tagline">An intelligent assistant for coding, prototyping, and learning.</p>
+        </div>
+        <div class="header-actions">
+            <label class="theme-switch" title="Toggle light/dark">
+                <input id="themeToggle" type="checkbox" aria-label="Toggle theme">
+                <span>Theme</span>
+            </label>
+        </div>
     </header>
-    <main>
-        <section id="intro">
-            <h2>What is CodeForge AI?</h2>
-            <p>CodeForge AI is an advanced autonomous coding assistant powered by OpenAI and LangChain. It uses enhanced ReAct methodology to help you write, review, and refactor code through natural language conversations.</p>
-        </section>
-        <section id="features">
-            <h2>Features</h2>
+
+    <main class="container">
+        <!-- Left column: informational content -->
+        <section class="panel info" aria-labelledby="introTitle">
+            <h2 id="introTitle">About CodeForge AI</h2>
+            <p>
+                CodeForge AI blends large language models with tooling orchestration to help you
+                write, review and ship code. This frontend demonstrates how you can embed an
+                interactive chat experience into your project and how to wire it to a backend API.
+            </p>
+
+            <h3>Highlights</h3>
             <ul>
-                <li>Powered by OpenAI GPT models with LangChain orchestration</li>
-                <li>Beautiful Rich terminal UI with colors and formatting</li>
-                <li>Comprehensive tool suite (file ops, Git, web search)</li>
-                <li>Smart workspace context management</li>
-                <li>Multi-step reasoning with execution traces</li>
-                <li>Built-in safety guards and error recovery</li>
+                <li>Responsive layout: works on phones, tablets and desktop screens</li>
+                <li>Demo-mode: runs locally without any API keys for quick testing</li>
+                <li>Extensible: example hooks show how to call a backend for real AI responses</li>
+                <li>Accessible: ARIA labels and keyboard shortcuts (Enter to send, Shift+Enter newline)</li>
             </ul>
-        </section>
-        <section id="setup">
-            <h2>Quick Setup</h2>
+
+            <h3>Quick setup</h3>
             <ol>
-                <li>Clone the repository</li>
-                <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
-                <li>Create <code>.env</code> file and add your OpenAI API key</li>
-                <li>Launch: <code>python main.py</code></li>
+                <li>Open <code>Frontend/index.html</code> in your browser to try the demo.</li>
+                <li>To connect to a server, follow the snippet in <code>Frontend/README.md</code>.</li>
             </ol>
         </section>
-        <section id="tools">
-            <h2>Available Tools</h2>
-            <ul>
-                <li>File Operations: read, write, append, patch</li>
-                <li>Code Search: Find text across your project</li>
-                <li>Git Integration: add, commit, push</li>
-                <li>Web Search: Real-time information (Exa API)</li>
-                <li>Script Execution: Safe Python script running</li>
-            </ul>
+
+        <!-- Right column: interactive chat panel -->
+        <section class="panel chat" aria-labelledby="chatTitle">
+            <div class="chat-header">
+                <h2 id="chatTitle">Interactive Assistant</h2>
+                <div class="controls">
+                    <select id="modelSelect" aria-label="Model selection">
+                        <option value="demo">Demo Mode (no API)</option>
+                        <option value="backend">Use Backend (/api/ai)</option>
+                    </select>
+                    <button id="exportBtn" title="Export conversation">Export</button>
+                    <button id="clearBtn" title="Clear conversation">Clear</button>
+                </div>
+            </div>
+
+            <div id="messages" class="messages" role="log" aria-live="polite"></div>
+
+            <form id="composer" class="composer" aria-label="Message composer">
+                <textarea id="input" placeholder="Ask something about your code or the project…" rows="2" aria-label="Message input"></textarea>
+                <div class="composer-actions">
+                    <label class="small-toggle">
+                        <input type="checkbox" id="compactMode">
+                        <span>Compact</span>
+                    </label>
+                    <button type="submit" id="sendBtn">Send</button>
+                </div>
+            </form>
+
+            <div class="status" id="status">Demo mode active — no API keys required.</div>
         </section>
     </main>
-    <footer>
-        <p>Built with ❤️ by Ayush Singh | Powered by OpenAI, LangChain & Python</p>
+
+    <footer class="site-footer">
+        <small>Made by Ayush Singh — view the project README for server wiring instructions.</small>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

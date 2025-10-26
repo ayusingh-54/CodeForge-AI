@@ -1,74 +1,103 @@
-/* HephAIstos styles */
-:root {
+/*
+  styles.css
+
+  Documented CSS for the CodeForge AI frontend.
+  - Responsive two-column layout
+  - Chat panel with messages, composer and controls
+  - Theme (dark/light) via data-theme attribute
+  - Compact mode for smaller height composer
+*/
+
+:root{
   --bg: #0d1117;
+  --surface: #0f1720;
+  --card: #0f1724;
   --fg: #c9d1d9;
+  --muted: #98a0a8;
   --accent: #58a6ff;
-  --card: #161b22;
-  --border: #30363d;
+  --success: #2dd4bf;
+  --danger: #ff6b6b;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 10px;
+  --max-width: 1100px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Light theme overrides */
+[data-theme="light"]{
+  --bg: #f7fbff;
+  --surface: #ffffff;
+  --card: #fbfdff;
+  --fg: #0b1220;
+  --muted: #445566;
+  --accent: #0066cc;
+  --glass: rgba(10,10,10,0.03);
 }
 
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--fg);
-  line-height: 1.6;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+  background:var(--bg);
+  color:var(--fg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
 }
 
-header {
-  text-align: center;
-  padding: 3rem 1rem 2rem;
+.site-header{
+  display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.branding h1{font-size:1.4rem;color:var(--accent);letter-spacing:0.6px;margin-bottom:2px}
+.branding .tagline{font-size:0.9rem;color:var(--muted)}
+.header-actions{display:flex;gap:12px;align-items:center}
+.theme-switch{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+
+.container{
+  max-width:var(--max-width);margin:28px auto;display:grid;grid-template-columns:1fr 420px;gap:24px;padding:0 20px;
 }
 
-header h1 {
-  font-size: 3rem;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
+.panel{background:var(--card);border-radius:var(--radius);padding:18px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 20px rgba(2,6,23,0.35)}
+.panel.info h2,.panel.chat h2{color:var(--accent)}
+
+/* Info column content */
+.panel.info ul{margin:10px 0 12px 18px}
+.panel.info ol{margin:10px 0 12px 18px}
+
+/* Chat panel layout */
+.chat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.controls{display:flex;gap:8px;align-items:center}
+select#modelSelect{padding:6px 8px;border-radius:6px;border:1px solid rgba(255,255,255,0.04);background:var(--surface);color:var(--fg)}
+.controls button{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--fg);padding:6px 8px;border-radius:6px;cursor:pointer}
+
+.messages{height:420px;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.msg{max-width:88%;padding:12px;border-radius:10px;line-height:1.4}
+.msg.user{align-self:flex-end;background:linear-gradient(90deg, rgba(88,166,255,0.12), rgba(88,166,255,0.08));border:1px solid rgba(88,166,255,0.12)}
+.msg.assistant{align-self:flex-start;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
+.msg .meta{font-size:0.75rem;color:var(--muted);margin-bottom:6px}
+
+.composer{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.composer textarea{width:100%;resize:vertical;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--fg);min-height:48px}
+.composer-actions{display:flex;align-items:center;justify-content:space-between}
+.composer-actions .small-toggle{display:flex;align-items:center;gap:8px;color:var(--muted)}
+.composer-actions button{background:var(--accent);color:white;padding:8px 12px;border-radius:8px;border:none;cursor:pointer}
+
+.status{margin-top:10px;font-size:0.85rem;color:var(--muted)}
+
+.site-footer{text-align:center;padding:18px 24px;color:var(--muted)}
+
+/* Compact mode reduces message area height and composer spacing */
+.compact .messages{height:300px}
+
+/* Responsive: stack columns at small widths */
+@media (max-width:980px){.container{grid-template-columns:1fr;}}
+
+@media (max-width:420px){
+  .messages{height:260px}
+  .branding h1{font-size:1.1rem}
 }
 
-header p {
-  font-size: 1.2rem;
-  opacity: 0.8;
-}
+/* Accessibility focus states */
+button:focus, select:focus, textarea:focus{outline:3px solid rgba(88,166,255,0.12);outline-offset:2px}
 
-main {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 1rem 3rem;
-}
-
-section {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
-
-section h2 {
-  margin-bottom: 1rem;
-  color: var(--accent);
-}
-
-ul, ol {
-  margin-left: 1.2rem;
-}
-
-code {
-  background: var(--bg);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  opacity: 0.6;
-}
+/* small utilities */
+.hidden{display:none}
