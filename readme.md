@@ -6,7 +6,7 @@
 
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-green.svg)](https://openai.com/)
 
-[![LangChain](https://img.shields.io/badge/LangChain-Powered-orange.svg)](https://langchain.com/)[![Watch the video](https://img.youtube.com/vi/YIwN4l4LuxI/3.jpg)](https://youtu.be/YIwN4l4LuxI?si=eUqtSghwDqh1QEZ7)
+[![LangChain](https://img.shields.io/badge/LangChain-Powered-orange.svg)](https://langchain.com/)[![Watch the video]()]()
 
 ## 🌟 Key Features## About
 
