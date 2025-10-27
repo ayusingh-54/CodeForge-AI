@@ -1,14 +1,12 @@
 # 🔥 CodeForge AI — ayuverse# 🔥 CodeForge AI — ayuverse# 🔥 CodeForge AI — ayuverse
 
-
-
-> **Your Intelligent AI-Powered Coding Companion**  > **Your Intelligent AI-Powered Coding Companion** > **Your Intelligent AI-Powered Coding Companion**
+> **Your Intelligent AI-Powered Coding Companion** > **Your Intelligent AI-Powered Coding Companion** > **Your Intelligent AI-Powered Coding Companion**
 
 > Build, modify, and manage code projects using simple natural language conversations.
 
 > Build, modify, and manage code projects using simple natural language conversations.> Build, modify, and manage code projects using simple natural language conversations.
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/) 
+[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 
 [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-green.svg)](https://openai.com/) [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/) [![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 
@@ -16,15 +14,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-green.svg)](https://openai.com/) [![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-green.svg)](https://openai.com/)
 
-
-
 ---[![LangChain](https://img.shields.io/badge/LangChain-Powered-orange.svg)](https://langchain.com/)[![LangChain](https://img.shields.io/badge/LangChain-Powered-orange.svg)](https://langchain.com/)
 
-
-
 ## 📋 Quick Navigation[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-
-
 
 - [📖 About CodeForge AI](#about)---
 
@@ -88,9 +80,7 @@ Modern developers waste hours on:- [🎯 Use Cases](#use-cases)- [🎯 Real-Worl
 
 CodeForge AI automates all of this using **natural language**. Describe what you want in plain English, and the AI handles the rest!- [📧 Contact](#contact)- [📧 Contact](#contact)
 
-
-
-**Traditional Way:** 30 minutes ⏱️  ---
+**Traditional Way:** 30 minutes ⏱️ ---
 
 **CodeForge AI Way:** 30 seconds ⚡
 
@@ -108,15 +98,9 @@ CodeForge AI automates all of this using **natural language**. Describe what you
 
 - **Python 3.8+** — Core language- **LangChain** for powerful LLM orchestration
 
-
-
 ---Modern developers waste hours on repetitive tasks:- **LangGraph** for multi-step workflow management
 
-
-
 ## ⭐ Key Features {#features}- Writing boilerplate code- **Rich** for a beautiful terminal interface
-
-
 
 ### 🤖 Intelligent Code Generation- Managing files across projects
 
@@ -127,8 +111,6 @@ CodeForge AI automates all of this using **natural language**. Describe what you
 - **Multi-Step**: Breaks complex tasks into manageable steps
 
 - **Adaptive**: Learns from your preferences in a session- Handling version control
-
-
 
 ### 🛠️ Comprehensive Tools- Debugging and refactoringModern developers spend hours writing boilerplate code, managing files, searching for patterns, and integrating version control. CodeForge AI **automates all of this** by understanding natural language descriptions and executing complex coding tasks.
 
@@ -143,8 +125,6 @@ CodeForge AI automates all of this using **natural language**. Describe what you
 - **Web Search**: Real-time information fetching
 
 - **Project Analysis**: Analyze code patterns & dependencies### Example```
-
-
 
 ### 🎨 Beautiful CLI1. Opening multiple files
 
@@ -172,19 +152,11 @@ CodeForge AI automates all of this using **natural language**. Describe what you
 
 - **Error Handling**: Graceful recovery4. Test manuallyYou simply say:
 
-
-
 ---5. Commit to git
-
-
 
 ## 🚀 Quick Start {#quickstart}6. Takes 30 minutes ⏱️> "Create a Python script that fetches weather data from an API and adds error handling with logging"
 
-
-
 Get running in **less than 5 minutes**!````
-
-
 
 ### PrerequisitesAnd CodeForge AI handles everything in seconds! ⚡
 
@@ -196,13 +168,9 @@ Get running in **less than 5 minutes**!````
 
 - ✅ OpenAI API key (https://platform.openai.com/api-keys)```## 🌟 Key Features## About
 
-
-
 ### Windows PowerShell"Create a Python script that fetches weather data from an API with error handling and logging"
 
-
-
-```powershellDone in 30 seconds ⚡### 🤖 Intelligent Code Generation
+````powershellDone in 30 seconds ⚡### 🤖 Intelligent Code Generation
 
 # 1. Clone
 
@@ -236,7 +204,7 @@ notepad .env
 
 python main.py- **Rich** - Beautiful terminal interface
 
-```
+````
 
 - **Python 3.8+** - Core language- **File Operations**: Read, write, append, and intelligently patch files
 
@@ -244,7 +212,7 @@ python main.py- **Rich** - Beautiful terminal interface
 
 - **Code Search**: Regex or plain-text search across your entire project
 
-```bash
+````bash
 
 # 1. Clone---- **Script Execution**: Safely run Python scripts with error detection
 
@@ -300,7 +268,7 @@ git clone https://github.com/ayusingh-54/CodeForge-AI.git
 
 cd CodeForge-AI- **Script Execution**: Safely run Python scripts with error detection### 🔒 Security & Safety
 
-```
+````
 
 - **Git Integration**: Automate add, commit, push, and branch management
 
@@ -360,7 +328,7 @@ Create `.env` in project root:
 
 - **Sandboxed**: Operations run in isolated, controlled environments- Git (optional, but recommended)
 
-```bash
+````bash
 
 # Windows- **Error Handling**: Graceful recovery with detailed error messages- OpenAI API key (get one at https://platform.openai.com/api-keys)
 
@@ -372,7 +340,7 @@ notepad .env
 
 nano .env## 🚀 Quick Start```powershell
 
-```
+````
 
 # 1. Clone the repository
 
@@ -494,13 +462,13 @@ python main.pygit clone https://github.com/ayusingh-54/CodeForge-AI.git
 
 **Your Input:**
 
-```### Step 2: Set Up Virtual Environment
+`````### Step 2: Set Up Virtual Environment
 
-Add comprehensive error handling and logging to 
+Add comprehensive error handling and logging to
 
 ayuverse/utils/helpers.py. Focus on the fetch_remote function.````bash
 
-```
+`````
 
 # 1. Clone```powershell
 
@@ -516,23 +484,15 @@ ayuverse/utils/helpers.py. Focus on the fetch_remote function.````bash
 
 5. Patches the file intelligently.\.venv\Scripts\Activate.ps1
 
-
-
 **Result:** Updated file with professional error handling! 🛡️# 2. Virtual environment
-
-
 
 ---python3 -m venv .venv# macOS/Linux
 
-
-
 ### Example 3: Git Workflowsource .venv/bin/activatepython3 -m venv .venv
-
-
 
 **Your Input:**source .venv/bin/activate
 
-```
+````
 
 Review my changes and commit with a meaningful message # 3. Install```
 
@@ -570,13 +530,13 @@ python main.py
 
 **Your Input:**
 
-```
+````
 
-Find all functions that use the 'requests' library 
+Find all functions that use the 'requests' library
 
 and show me their locations---```bash
 
-```
+```````
 
 notepad .env  # or your favorite text editor
 
@@ -696,7 +656,7 @@ Just type your goal in English:
 
 "Explain the ReAct framework"- `openai` - GPT model access
 
-```
+```````
 
 - `langchain` - LLM orchestration| Command | Description || `patch_file` | Apply line-based changes to files |
 
@@ -724,8 +684,6 @@ CodeForge AI uses **ReAct** (Reasoning and Acting) — a proven methodology comb
 
 - What's the best approach?| `:tools` | List all available tools with descriptions || `git_add` | Stage files for commit |
 
-
-
 **Step 2: Acting** ⚙️### Step 4: Configure API Keys
 
 - Read relevant files
@@ -735,8 +693,6 @@ CodeForge AI uses **ReAct** (Reasoning and Acting) — a proven methodology comb
 - Run scripts
 
 - Perform git operationsCreate `.env` in project root:
-
-
 
 **Step 3: Observing** 👀| `:clear` | Clear the terminal screen || `git_push` | Push commits to remote repository |
 
@@ -756,11 +712,7 @@ CodeForge AI uses **ReAct** (Reasoning and Acting) — a proven methodology comb
 
 - Return results| `:history` | Show command history |## 💡 Usage Examples
 
-
-
 ### Context Awareness# macOS/Linux
-
-
 
 Maintains awareness of:nano .env| `:quit` or `:exit` | Exit CodeForge AI |
 
@@ -788,17 +740,11 @@ Maintains awareness of:nano .env| `:quit` or `:exit` | Exit CodeForge AI |
 
 - ✅ Superior to other approaches# ========== REQUIRED ==========```
 
-
-
 ---OPENAI_API_KEY=sk-your-actual-key-here
-
-
 
 ## 🏗️ Architecture {#architecture}#### Creating a New Script🔎 Enter your goal: Create a Python script that calculates fibonacci numbers and save it as fib.py
 
-
-
-```# ========== OPTIONAL ==========
+``````# ========== OPTIONAL ==========
 
 CodeForge-AI/
 
@@ -976,15 +922,15 @@ LOG_LEVEL=INFO
 
 3. ✅ Creates directories if needed- `:tools` - List all available tools
 
-**0.0** — Deterministic (Code generation)  
+**0.0** — Deterministic (Code generation)
 
 **0.1** — Precise (Most tasks)  4. ✅ Saves with proper formatting
 
-**0.5** — Balanced (General use)  
+**0.5** — Balanced (General use)
 
 **0.8** — Creative (Brainstorming)  5. ✅ Shows preview of result## 🏗️ Architecture- `:state` - Display current agent context
 
-**1.0** — Maximum creativity  
+**1.0** — Maximum creativity
 
 **Output:** Professional fibonacci.py file ready to use!- `:clear` - Clear the screen
 
@@ -1002,9 +948,9 @@ LOG_LEVEL=INFO
 
 **Task:** Create a Flask REST API with authentication
 
-````
+``````
 
-```
+````
 
 "Build a Flask REST API with GET/POST/DELETE endpoints for a todo app."Add comprehensive error handling and logging to codeforge-ai/## 🧠 How It Works
 
@@ -1052,7 +998,7 @@ Include JWT authentication, error handling, logging, and database models."
 
 calculate statistics, and export summary report to JSON."
 
-```
+````
 
 **Output:** Updated file with professional error handling!│ │3. **Observing**: Processes results and adjusts the approach
 
@@ -1074,15 +1020,13 @@ calculate statistics, and export summary report to JSON."
 
 **Time:** 3 minutes | Effort: 0 | Errors: 0
 
-
-
 ---
 
 **Your Input:**│ │ └── registry.py # Tool registry and context### Context Awareness
 
 ### 🚀 DevOps
 
-````
+````````
 
 **Task:** Create CI/CD pipeline
 
@@ -1170,13 +1114,13 @@ edge cases, performance tests, error handling, and docstring examples."
 
 
 
-```````
+````````
 
 "Refactor agent.py for better readability: add type hints, improve
 
 variable names, reduce complexity, add docstrings, optimize performance."└── README.md # This file- **Safe Execution**: Python scripts are scanned for unsafe operations
 
-```
+`````
 
 **What Happens:**
 
@@ -1212,13 +1156,13 @@ variable names, reduce complexity, add docstrings, optimize performance."└─�
 
 ## 🛠️ CLI Commands- **LangChain**: Framework for building LLM applications with enhanced capabilities### Workspace Context
 
-```
+`````
 
 "Create comprehensive documentation: API reference, setup guide,### Navigation & Help Commands- **LangGraph**: Workflow orchestration and multi-step reasoning
 
 architecture explanation, troubleshooting, best practices, examples."
 
-```| Command | Description | When to Use |- **Rich**: Beautiful terminal UI with colors and formattingThe agent automatically analyzes your workspace on startup, providing context about:
+````| Command | Description | When to Use |- **Rich**: Beautiful terminal UI with colors and formattingThe agent automatically analyzes your workspace on startup, providing context about:
 
 
 
@@ -1296,13 +1240,13 @@ result = calculate(x)
 
 read_file("project/file.py")|---------|-------------|---------|
 
-```
+````
 
 | `:git add` | Stage files | `:git add .` || `list_dir` | List directory contents | `path` (optional) |- Recently created files
 
 #### 3. Destructive Guards
 
-```python| `:git commit <msg>` | Commit changes | `:git commit "Add new feature"` |
+```python| `:git commit <msg>`| Commit changes |`:git commit "Add new feature"` |
 
 # ❌ BLOCKED (requires confirmation)
 
@@ -1318,7 +1262,7 @@ read_file()| `patch_file` | Apply line-based changes | `path`, `changes` |- Sess
 
 create_file()
 
-```### Code & Search Commands
+````### Code & Search Commands
 
 
 
@@ -1336,7 +1280,7 @@ create_file()
 
 "my_key": os.getenv("OPENAI_API_KEY")| `:run <script>` | Execute script | `:run tests/test_ai.py` |
 
-```
+````
 
 | `:search <pattern>` | Find code | `:search "def.*agent"` || `git_add` | Stage files for commit | `files` |
 
@@ -1356,8 +1300,6 @@ create_file()
 
 - ✅ Version control everything| `git_push` | Push to remote repository | `remote`, `branch` |2. Create a feature branch
 
-
-
 **For Developers:**Just type your goal in plain English:
 
 - ✅ Validate all inputs
@@ -1374,15 +1316,11 @@ create_file()
 
 ---
 
-
-
 ## 🤝 Contributing {#contributing}
 
 "Add unit tests for the fibonacci function"5. Submit a pull request
 
 We welcome all contributions! Whether it's code, documentation, features, or bug fixes.
-
-
 
 ### How to Contribute
 
@@ -1390,7 +1328,7 @@ We welcome all contributions! Whether it's code, documentation, features, or bug
 
 **1. Fork the Repository**
 
-```bash
+````bash
 
 Click "Fork" on GitHub
 
@@ -1404,9 +1342,9 @@ Click "Fork" on GitHub
 
 git checkout -b feature/amazing-feature"Generate a README for my project"Configure CodeForge AI through environment variables in your `.env` file:
 
-```
+````
 
-```
+``````
 
 **3. Make Changes**
 
@@ -1440,13 +1378,13 @@ git commit -m "Fix: What was fixed"
 
 git commit -m "Docs: Documentation updates"### The 4-Step Loop
 
-```
+``````
 
 - Built with [Groq](https://groq.com/) for fast LLM inference
 
 **6. Push to Branch**
 
-```bash#### Step 1: Reasoning 🤔
+``````bash#### Step 1: Reasoning 🤔
 
 git push origin feature/amazing-feature
 
@@ -1544,7 +1482,7 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 
 **Developer:** Ayus Singh  - Execute next steps- Build responsive UI components
 
-**Email:** ayusingh693@gmail.com  
+**Email:** ayusingh693@gmail.com
 
 **GitHub:** [@ayusingh-54](https://github.com/ayusingh-54)- Return results
 
@@ -1701,29 +1639,33 @@ Built with ❤️ using:
 ├── LICENSE # MIT License
 └── README.md # This file
 
-````
+``````
 
 ### Core Components
 
 **`agent.py` - The Brain**
+
 - Runs the ReAct loop
 - Decides which tools to use
 - Manages workflows
 - Returns results
 
 **`state.py` - The Memory**
+
 - Tracks current directory
 - Maintains file history
 - Stores session state
 - Records operations
 
 **`tools.py` - The Hands**
+
 - File I/O operations
 - Git commands
 - Web search
 - Script execution
 
 **`cli.py` - The Interface**
+
 - Terminal UI with Rich
 - Syntax highlighting
 - Progress indicators
@@ -1765,7 +1707,7 @@ DEBUG=false
 
 # LOG LEVEL - DEBUG, INFO, WARNING, ERROR
 LOG_LEVEL=INFO
-````
+```
 
 ### Model Selection Guide
 
