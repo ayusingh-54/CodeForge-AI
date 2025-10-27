@@ -61,116 +61,123 @@ And CodeForge AI handles everything in seconds! ⚡
 
 ## 🌟 Key Features## About
 
-### 🤖 Intelligent Code Generation```
+### 🤖 Intelligent Code Generation
 
-- **Natural Language Interface**: Describe what you want in plain English, and CodeForge AI handles the implementation
+- **Natural Language Interface**: Describe tasks in plain English—no syntax knowledge needed
+- **Context-Aware Execution**: Understands your entire project structure and file relationships
+- **Multi-Step Reasoning**: Automatically breaks complex tasks into manageable steps
+- **Adaptive Learning**: Remembers preferences and past interactions within a session
 
-- **Context-Aware Execution**: Maintains full workspace context and understands file relationships ▄ ▄ █ █▀ ▄▄ ▄▄▄▄▄ ▀█ ▄
+### 🛠️ Comprehensive Tool Suite
 
-- **Multi-Step Reasoning**: Breaks down complex tasks into manageable steps with transparent execution traces █ █ ▄▄▄ ▄▄▄▄ █ ▄▄ █ ██ █ █ ▄▄▄ ▄▄█▄▄ ▄ ▄ ▄▄▄
-
-█▄▄▄▄█ █▀ █ █▀ ▀█ █▀ █ █ █ █ █ █ █ ▀ █ █ █ █ ▀
-
-### 🛠️ Comprehensive Tool Suite █ █ █▀▀▀▀ █ █ █ █ █ █▄▄█ █ █ ▀▀▀▄ █ █ █ ▀▀▀▄
-
-- **File Operations**: Read, write, append, and intelligently patch files █ █ ▀█▄▄▀ ██▄█▀ █ █ █ █ █ ▄▄█▄▄ █ ▀▄▄▄▀ ▀▄▄ ▀▄▄▀█ ▀▄▄▄▀
-
-- **Code Search**: Fast text search across your entire project █ ▀▀ ▀▀
-
-- **Script Execution**: Safely run Python scripts with built-in guardrails ▀
-
-- **Git Integration**: Automated version control operations (add, commit, push)```
-
-- **Web Search**: Real-time web search for up-to-date information (powered by Exa)
-
-## ✨ Features
+- **File Operations**: Read, write, append, and intelligently patch files
+- **Code Search**: Regex or plain-text search across your entire project
+- **Script Execution**: Safely run Python scripts with error detection
+- **Git Integration**: Automated version control (add, commit, push, branching)
+- **Web Search**: Real-time information fetching for current data
+- **Project Analysis**: Analyze code patterns, dependencies, and architecture
 
 ### 🎨 Beautiful CLI Experience
 
-- **Rich Terminal UI**: Syntax highlighting, progress indicators, and formatted output- **Autonomous Code Generation**: Write, modify, and organize code files through natural language
+- **Rich Terminal UI**: Syntax highlighting, progress bars, and formatted output
+- **Interactive Prompts**: Intuitive command palette with smart suggestions
+- **Execution Traces**: See the AI's step-by-step decision-making process
+- **Error Recovery**: Intelligent handling of failures with retry strategies
+- **Session History**: Track all operations performed in your session
 
-- **Interactive Commands**: Powerful command palette with quick actions- **Intelligent File Operations**: Read, write, append, patch, and search files with context awareness
+### 🔒 Security & Safety
 
-- **Execution Traces**: Optional detailed view of agent decision-making process- **Git Integration**: Automated version control with add, commit, and push capabilities
+- **Path Validation**: Prevents unauthorized access to parent directories
+- **Safe Script Execution**: Scripts are scanned for unsafe operations
+- **Destructive Guards**: Built-in safeguards against accidental deletions
+- **Sandboxed Execution**: All operations run in isolated environments
+- **Robust Error Handling**: Graceful failure recovery and detailed error messages
 
-- **Error Recovery**: Intelligent error handling with adaptive retry strategies- **Web Search**: Real-time web search integration for up-to-date information
+## 🚀 Quick Start
 
-- **Interactive CLI**: Beautiful command-line interface with syntax highlighting and progress indicators
+Get CodeForge AI running in **less than 5 minutes**!
 
-### 🔒 Safety First- **Context-Aware**: Maintains session context and understands file relationships
+### Prerequisites
 
-- **Path Traversal Protection**: Prevents access to parent directories- **Safety Features**: Built-in guardrails against unsafe operations
+- Python 3.8 or higher
+- pip (Python package manager)
+- Git (optional, but recommended)
+- OpenAI API key (get one at https://platform.openai.com/api-keys)
 
-- **Destructive Operation Guards**: Built-in safeguards against unsafe operations
+### Installation (Windows PowerShell)
 
-- **Sandboxed Execution**: Script execution with safety checks## 🚀 Quick Start
+```powershell
+# 1. Clone the repository
+git clone https://github.com/ayusingh-54/CodeForge-AI.git
+cd CodeForge-AI
 
-## 📦 Installation### Prerequisites
+# 2. Create a virtual environment
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 
-### Prerequisites1. **Python 3.8+**
+# 3. Install dependencies
+pip install -r requirements.txt
 
-- **Python 3.8 or higher**2. **API Keys** (set in `.env` file):
+# 4. Create and configure .env file
+notepad .env
 
-- **OpenAI API Key** (required) ```env
+# 5. Add your API keys to .env
 
-- **Exa API Key** (optional, for web search) GROQ_API_KEY=your_groq_api_key
+# 6. Run the application
+python main.py
+```
 
-  EXA_API_KEY=your_exa_api_key
+---
 
-### Quick Setup ```
+## 💻 Installation & Setup
 
-1. **Clone the repository:**### Installation
+### Step 1: Clone the Repository
 
-   ````bash
+```bash
+git clone https://github.com/ayusingh-54/CodeForge-AI.git
+cd CodeForge-AI
+```
 
-   git clone https://github.com/yourusername/codeforge-ai.git1. Clone the repository:
+### Step 2: Set Up Virtual Environment
 
-   cd codeforge-ai
+```powershell
+# Windows
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 
-   ```   ```bash
+# macOS/Linux
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-   git clone <repository-url>
+### Step 3: Install Dependencies
 
-   ````
+```bash
+pip install -r requirements.txt
+```
 
-2. **Install dependencies:** cd
+### Step 4: Configure Environment Variables
 
-   ````bash ayuverse
+```bash
+notepad .env  # or your favorite text editor
+```
 
-   pip install -r requirements.txt   ```
+Add:
 
-   ````
+```env
+OPENAI_API_KEY=sk-your-api-key-here
+EXA_API_KEY=your-exa-key-here  # Optional
+CODEFORGE_MODEL=gpt-4o-mini
+CODEFORGE_TEMPERATURE=0.1
+CODEFORGE_MAX_STEPS=20
+```
 
-3. Install dependencies:
+### Step 5: Run the Application
 
-4. **Configure environment variables:**
-
-   `bash   `bash
-
-   cp .env.example .env pip install groq openai python-dotenv
-
-   `   `
-
-   Edit `.env` and add your API keys:3. Set up your `.env` file with required API keys
-
-   ````env
-
-   OPENAI_API_KEY=sk-your-openai-api-key-here4. Run ayuverse:
-
-   EXA_API_KEY=your-exa-api-key-here  # Optional   ```bash
-
-   ```   python main.py
-
-   ````
-
-5. **Launch CodeForge AI:**
-
-   ````bash## 🛠️ Available Tools
-
-   python main.py
-
-   ```| Tool                   | Description                       |
-   ````
+````bash
+python main.py
+```| Tool                   | Description                       |
+````
 
 | ---------------------- | --------------------------------- |
 
