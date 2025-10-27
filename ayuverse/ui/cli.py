@@ -50,7 +50,7 @@ def display_banner():
     
     console.print("\n")
     console.print(banner_panel, justify="center")
-    console.print("\n[dim cyan]Powered by OpenAI & LangChain[/dim cyan]\n", justify="center")
+    console.print("\n[dim cyan]Pure Python + OpenAI + ReAct Framework[/dim cyan]\n", justify="center")
 
 
 def display_help():

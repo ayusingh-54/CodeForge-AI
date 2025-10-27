@@ -1,12 +1,11 @@
 ﻿"""
-CodeForge AI Agent - LangChain-based autonomous coding agent
-Uses LangGraph for workflow orchestration with enhanced reasoning capabilities
-Author: Ayush Singh
+CodeForge AI Agent - Pure Python ReAct Agent
+Implements the ReAct (Reason + Act) framework without LangChain/LangGraph
+Author: Ayus Singh
 """
-from typing import Optional
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
+from typing import Optional, List, Dict
 import os
+from openai import OpenAI
 
 from ayuverse.tools.registry import ToolRegistry, ToolResult
 from ayuverse.utils.helpers import _parse_json, _clip
@@ -15,23 +14,26 @@ from ayuverse.core.state import AgentState
 
 class CodeForgeAgent:
     """
-    Advanced AI agent using LangChain for reasoning and LangGraph for orchestration.
-    Implements an enhanced ReAct pattern with better tool selection and error recovery.
+    Pure Python AI agent implementing the ReAct pattern.
+    Uses OpenAI API directly for reasoning and tool orchestration.
+    
+    ReAct Loop:
+    1. REASON: Think about the goal and plan next action
+    2. ACT: Execute a tool/action
+    3. OBSERVE: Analyze the result
+    4. ITERATE: Repeat until goal is achieved
     """
     
     def __init__(self, tool_registry: ToolRegistry, agent_state: AgentState, 
                  model: str = "gpt-4o-mini", temperature: float = 0.1):
         self.tool_registry = tool_registry
         self.agent_state = agent_state
-        self.messages = []
+        self.messages: List[Dict[str, str]] = []
         
-        # Initialize OpenAI chat model via LangChain
-        self.llm = ChatOpenAI(
-            model=model,
-            temperature=temperature,
-            api_key=os.environ.get("OPENAI_API_KEY"),
-            streaming=False
-        )
+        # Initialize OpenAI client directly
+        self.client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+        self.model = model
+        self.temperature = temperature
         
         self.system_prompt = self._build_system_prompt()
     
@@ -53,7 +55,7 @@ REASONING PROTOCOL:
 1. Analyze the user's goal carefully
 2. Break down complex tasks into smaller steps
 3. Use tools strategically - choose the most efficient path
-4. If a file is referenced as "it", "this", or "that"  use LAST MODIFIED FILE: {self.agent_state.last_modified_file or 'none'}
+4. If a file is referenced as "it", "this", or "that" use LAST MODIFIED FILE: {self.agent_state.last_modified_file or 'none'}
 5. Keep track of what you've done and what remains
 6. If you encounter errors, analyze and adapt your approach
 
@@ -91,29 +93,36 @@ IMPORTANT RULES:
 Begin each task by thinking through the approach, then proceed step by step."""
     
     def invoke(self, prompt: str) -> dict:
-        """Process a single user request through the LLM."""
+        """Process a single user request through the LLM using OpenAI API directly."""
+        # Add system message on first call
         if not self.messages:
             self.messages.append({"role": "system", "content": self.system_prompt})
         
+        # Add user message
         self.messages.append({"role": "user", "content": prompt})
         
-        # Convert to LangChain message format
-        lc_messages = []
-        for msg in self.messages:
-            if msg["role"] == "system":
-                lc_messages.append(SystemMessage(content=msg["content"]))
-            elif msg["role"] == "user":
-                lc_messages.append(HumanMessage(content=msg["content"]))
-            elif msg["role"] == "assistant":
-                lc_messages.append(AIMessage(content=msg["content"]))
-        
-        # Get response from LLM
-        response = self.llm.invoke(lc_messages)
-        response_text = response.content
-        
-        self.messages.append({"role": "assistant", "content": response_text})
-        
-        return _parse_json(response_text)
+        # Call OpenAI API directly
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model,
+                messages=self.messages,
+                temperature=self.temperature,
+                max_tokens=2000
+            )
+            
+            response_text = response.choices[0].message.content
+            
+            # Add assistant response to history
+            self.messages.append({"role": "assistant", "content": response_text})
+            
+            # Parse the JSON response
+            return _parse_json(response_text)
+            
+        except Exception as e:
+            return {
+                "thought": f"Error calling OpenAI API: {str(e)}",
+                "final": {"message": f"Failed to get response from AI: {str(e)}"}
+            }
 
 
 def execute_agent_workflow(goal: str, agent: CodeForgeAgent, 
@@ -121,8 +130,16 @@ def execute_agent_workflow(goal: str, agent: CodeForgeAgent,
                            agent_state: AgentState, 
                            max_steps: int = 15) -> dict:
     """
-    Execute the agent workflow using an iterative approach.
-    Returns final result and execution trace.
+    Execute the ReAct agent workflow using pure Python iteration.
+    
+    This implements the core ReAct loop:
+    1. REASON about what to do next
+    2. ACT by calling a tool
+    3. OBSERVE the result
+    4. ITERATE until completion
+    
+    Returns:
+        dict: Final result with execution trace
     """
     observation = None
     execution_trace = []
@@ -132,9 +149,10 @@ def execute_agent_workflow(goal: str, agent: CodeForgeAgent,
         if step == 0:
             prompt = f"Goal: {goal}\n\nAnalyze this goal and determine the first step."
         else:
-            prompt = f"Observation from last action: {observation.output if observation else 'N/A'}\n\nWhat is the next step?"
+            obs_text = observation.output if observation else 'N/A'
+            prompt = f"Observation from last action: {obs_text}\n\nWhat is the next step?"
         
-        # Get agent decision
+        # REASON: Get agent decision
         response = agent.invoke(prompt)
         
         step_info = {
@@ -155,7 +173,7 @@ def execute_agent_workflow(goal: str, agent: CodeForgeAgent,
                 "total_steps": step + 1
             }
         
-        # Execute action
+        # ACT: Execute action
         if "action" in response:
             step_info["type"] = "action"
             tool_name = response["action"].get("tool")
@@ -171,7 +189,7 @@ def execute_agent_workflow(goal: str, agent: CodeForgeAgent,
                 tool = tool_registry.get_tool(tool_name).fn
                 tool_result = tool(tool_args, tool_registry.get_context())
                 
-                # Update agent state
+                # OBSERVE: Update agent state with results
                 agent_state.update_from_tool_result(tool_name, tool_args, tool_result)
                 
                 observation = tool_result
@@ -189,10 +207,10 @@ def execute_agent_workflow(goal: str, agent: CodeForgeAgent,
         
         execution_trace.append(step_info)
     
-    # Max steps reached
+    # Max steps reached without completion
     return {
         "success": False,
-        "final_answer": "Maximum steps reached without completing the goal.",
+        "final_answer": "Maximum steps reached without completing the goal. Try breaking it into smaller tasks.",
         "steps": execution_trace,
         "total_steps": max_steps
     }

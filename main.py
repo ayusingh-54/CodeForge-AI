@@ -1,7 +1,7 @@
 """
 CodeForge AI - An Intelligent Code Generation & Management System
-Author: Ayush Singh
-Description: Advanced AI coding assistant using LangChain/LangGraph orchestration
+Author: Ayus Singh
+Description: Pure Python AI coding assistant using ReAct framework (no LangChain/LangGraph)
 """
 import os
 import sys
@@ -39,7 +39,7 @@ def validate_environment():
 def main():
     """Main entry point for CodeForge AI."""
     console.print("[bold cyan]CodeForge AI - Intelligent Code Assistant[/bold cyan]", justify="center")
-    console.print("[dim]Powered by OpenAI & LangChain[/dim]\n", justify="center")
+    console.print("[dim]Pure Python + OpenAI + ReAct Framework[/dim]\n", justify="center")
     
     if not validate_environment():
         return 1
